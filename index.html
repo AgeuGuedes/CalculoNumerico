@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Método da Bissecção — Didático</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Método da Bissecção</h1>
+
+    <!-- FORMULÁRIO -->
+    <form id="bisection-form">
+      <label for="fx">
+        Função f(x)
+        
+      <input id="fx" name="fx" type="text" required placeholder="ex.: x^3 + 8x^2 - 4x - 2" />
+
+      <div class="grid-2">
+        <div>
+          <label for="a">a (início do intervalo)</label>
+          <input id="a" name="a" type="text" required placeholder="-1" />
+        </div>
+        <div>
+          <label for="b">b (fim do intervalo)</label>
+          <input id="b" name="b" type="text" required placeholder="0" />
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div>
+          <label for="tol">ε (tolerância)</label>
+          <input id="tol" name="tol" type="text" required value="0.0001" />
+        </div>
+        <div>
+          <label for="maxit">Máx. iterações</label>
+          <input id="maxit" name="maxit" type="number" required value="50" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Calcular</button>
+        <button type="button" id="btn-clear" class="secondary">Limpar</button>
+      </div>
+    </form>
+
+    <!-- RESULTADOS -->
+    <section id="output" class="output hidden">
+      <h2>Resultado</h2>
+      <div id="summary" class="summary"></div>
+      <div id="messages" class="messages"></div>
+      <div id="table-wrapper" class="table-wrapper"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>
+      Critérios de parada: |f(c)| &lt; ε ou (b−a)/2 &lt; ε.  
+      O sistema ajusta o intervalo automaticamente se possível.
+    </small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
